@@ -13,7 +13,7 @@ Projeto sendo realizado na NLW da Rocketseat na Trilha Ignite.
 - React Native
 
 ## Layout
-Você pode visualizar/copiar o layout no figma através do link abaixo.
+Você pode visualizar/copiar o layout no figma através do link abaixo.<br>
 [Figma](https://www.figma.com/community/file/1150897317533332617)
 
 #neverstoplearning
