@@ -19,7 +19,7 @@ app.get('/ads', (request, response) => {
     {
       id: 4,
       name: 'anúncio 4'
-    }
+    },
   ])
 })
 
