@@ -8,6 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Background } from '../../components/Background';
 import { Heading } from '../../components/Heading';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
+import { DuoMatch } from '../../components/DuoMatch';
 
 import { styles } from './styles';
 import { THEME } from '../../theme';
@@ -16,6 +17,7 @@ import logoImg from '../../assets/logo-nlw-esports.png';
 
 export function Game() {
   const [duos, setDuos] = useState<DuoCardProps[]>([]);
+  const [discordDuoSelected, setDiscordDuoSelected] = useState('');
 
   const navigation = useNavigation();
   const route = useRoute();
@@ -23,6 +25,12 @@ export function Game() {
 
   function handleGoBack() {
     navigation.goBack();
+  }
+
+  async function getDiscordUser(adsId: string) {
+    fetch(`http://172.18.0.1:3333/ads/${adsId}/discord`)
+      .then((response) => response.json())
+      .then((data) => setDiscordDuoSelected(data.discord))
   }
 
   useEffect(() => {
@@ -67,7 +75,7 @@ export function Game() {
           renderItem={({ item })=> (
             <DuoCard
              data={item}
-             onConnect={() => {}}
+             onConnect={() => getDiscordUser(item.id)}
             />
           )}
           horizontal
@@ -80,7 +88,11 @@ export function Game() {
             </Text>
           )}
         />
-
+        <DuoMatch
+          discord={discordDuoSelected}
+          visible={discordDuoSelected.length > 0}
+          onClose={() => setDiscordDuoSelected('')}
+        />
       </SafeAreaView>
     </Background>
   );
