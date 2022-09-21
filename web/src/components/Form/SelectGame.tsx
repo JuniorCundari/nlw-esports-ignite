@@ -4,10 +4,7 @@ import * as Select from '@radix-ui/react-select';
 
 import { CaretDown } from "phosphor-react";
 
-interface Game {
-  id: string;
-  title: string;
-}
+import { Game } from '../../@types/games';
 
 export function SelectGame() {
   const [games, setGames] = useState<Game[]>([]);
