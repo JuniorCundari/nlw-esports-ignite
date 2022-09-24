@@ -12,7 +12,7 @@ export default function CardInfoAd(props: Props) {
       >
         {props.label}
       </li>
-      <li className={props.colorValue}>{props.value}</li>
+      <li className={`${props.colorValue} mb-4`}>{props.value}</li>
     </>
   );
 }

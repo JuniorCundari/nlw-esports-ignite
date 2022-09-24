@@ -61,7 +61,7 @@ export default function ListAds() {
     },
   };
 
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(sliderOptions);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>();
 
   useEffect(() => {
     axios(`http://localhost:3333/games/${id}/ads`).then((response) => {
@@ -99,9 +99,9 @@ export default function ListAds() {
         label="Conecte-se e comece a jogar!"
       />
 
-      <div ref={sliderRef} className="w-full keen-slider">
+      <div ref={sliderRef} className="keen-slider">
         {
-        ads.length !== 0 
+        ads.length > 0 
           ? ads.map((ad) => {
             return (
               <CardAd
@@ -115,8 +115,8 @@ export default function ListAds() {
               />
             );
           })
-          : <span className="text-zinc-300 font-black">
-              Ainda não há anúncios!
+          : <span className="text-zinc-300 font-black text-[30px]">
+              Ainda não há anúncios! 🥺
             </span>
         }
       </div>
