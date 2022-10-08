@@ -21,7 +21,7 @@ interface AdsBanner {
   yearsPlaying: number;
 }
 
-export default function ListAds() {
+export default function ListAds(props: AdsBanner) {
   const [ads, setAds] = useState<AdsBanner[]>([]);
   const [datas, setDatas] = useState<Game[]>([]);
   const { id } = useParams();
@@ -106,6 +106,7 @@ export default function ListAds() {
             return (
               <CardAd
                 key={ad.id}
+                id={ad.id}
                 name={ad.name}
                 yearsPlaying={ad.yearsPlaying}
                 weekDays={ad.weekDays}
