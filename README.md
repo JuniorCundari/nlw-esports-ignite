@@ -9,7 +9,7 @@ poderá buscar seu duo (dupla) e publicar um anúncio para encontrar outros play
 
 Projeto sendo realizado na NLW da Rocketseat na Trilha Ignite.
 
-<div>
+<div align="center" >
   <img width="400px" src="https://user-images.githubusercontent.com/88779658/194710540-50f4ca37-7b66-4da6-9814-d762a1b46cab.png" />
   <img width="400px" src="https://user-images.githubusercontent.com/88779658/194710585-adeb120b-83f5-4a76-9567-30472acb962e.png" />
 </div>
